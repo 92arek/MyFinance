@@ -1,0 +1,9 @@
+﻿@model MyFinance.ViewModels.ResultModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>@Html.DisplayFor(m => m.CalculationType)</h1>
+    <p>@Html.DisplayFor(m => m.ResultOfCalculation)</p>
+</div>
