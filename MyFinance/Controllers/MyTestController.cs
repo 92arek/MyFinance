@@ -8,10 +8,16 @@ namespace MyFinance.Controllers
     public class MyTestController : Controller
     {
         private readonly IAdditionService additionService;
+        private readonly IDependencyInversion<A> dependencyInversionA;
+        private readonly IDependencyInversion<B> dependencyInversionB;
 
-        public MyTestController(IAdditionService additionService)
+        public MyTestController(IAdditionService additionService,
+            IDependencyInversion<A> dependencyInversionA,
+            IDependencyInversion<B> dependencyInversionB)
         {
             this.additionService = additionService;
+            this.dependencyInversionA = dependencyInversionA;
+            this.dependencyInversionB = dependencyInversionB;
         }
 
         // GET: MyTest
@@ -63,6 +69,10 @@ namespace MyFinance.Controllers
         public ActionResult Multiply()
         {
             var model = new TestModel();
+            
+            var AandB = dependencyInversionA.ReturnLetter();
+            AandB = $"{AandB} {dependencyInversionB.ReturnLetter()}";
+            model.Name = AandB;
 
             return View(model);
         }

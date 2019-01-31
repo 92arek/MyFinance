@@ -156,6 +156,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\TestSevice\IAdditionService.cs" />
+    <Compile Include="Services\TestSevice\IDependencyInversion.cs" />
     <Compile Include="ViewModels\ResultModel.cs" />
     <Compile Include="ViewModels\TestModel.cs" />
   </ItemGroup>

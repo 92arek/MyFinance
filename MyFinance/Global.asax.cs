@@ -42,6 +42,8 @@ namespace MyFinance
 
             builder.RegisterType<AdditionService>().As<IAdditionService>();
             builder.RegisterType<Xxx>().As<Ixxx>();
+            builder.RegisterType<DependencyInversionA>().As<IDependencyInversion<A>>();
+            builder.RegisterType<DependencyInversionB>().As<IDependencyInversion<B>>();
             
             
 
